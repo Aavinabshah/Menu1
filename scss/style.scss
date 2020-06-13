@@ -1,0 +1,324 @@
+$red: #F37272;
+$brown: #584E4A;
+$whitey: #f0f0f0;
+$light-color: #f4f4f4;
+$text-color2: #0e6cff;
+$text-color: #333;
+$primary-color: #f4f4f4;
+$secondary-color: #ff8700;
+
+$snap: cubic-bezier(1.000, 0.005, 0.240, 1.000);
+$bounce: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  background-color: #999;
+}
+.content {
+  transform-origin: top left;
+  transition: transform .7s $snap;
+  
+  // styling
+  background-color: $light-color;
+}
+
+/* basically all styling from now on */
+.menu_toggle {
+  z-index: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  height: 80px;
+  background-color: $secondary-color;
+  border-bottom-right-radius: 100%;
+  
+  &:active {
+    i {
+      opacity: 0.8
+    }
+  }  
+  i {
+    color: $whitey;
+  }
+  .menu_open,
+  .menu_close {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    margin-top: -15px;
+    margin-left: -12px;
+    transition: transform .7s $snap;
+  }
+  .menu_open {
+    transform-origin: -100px -100px;
+  }
+  .menu_close {
+    transform: rotate(20deg);
+    transform-origin: -100px -160px;
+  }
+}
+.menu_items {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    height: 60px;
+    margin-bottom: 30px;
+    transform: translateX(-300px);
+    transition: transform .7s 0s $snap;
+    
+    &:nth-child(2){
+      margin-left: 40px;
+    }
+    &:nth-child(3){
+      margin-left: 80px;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $light-color;
+    transition: color .2s;
+    
+    .icon {
+      position: relative;
+      display: inline-block;
+      margin-right: 25px;
+      color: $whitey;
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: '';
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin-left: -33px;
+        margin-top: -32px;
+        border-radius: 100%;
+        border: 2px solid $whitey;
+        transition: border-color .2s;
+      }
+    }
+    
+    &:hover {
+      color: $whitey;
+      .icon {
+        &:after {
+          border-color: $red;
+        }
+      }
+    }
+    &:active {
+      .icon {
+        color: $red;
+      }
+    }
+  }
+}
+
+
+/* Let's open up the menu */
+.shazam {
+  .content {
+    transform: rotate(-30deg);
+  }
+  
+  // this will show hidden content overflow when rotated,
+  // but will result in a jump, if you've already scrolled down the content
+  // plus, you will lose your current reading position
+  // fixable with JS, not gonna bother
+  
+  /*.content_inner {
+    height: 100%;
+  }*/
+  
+  .menu_open {
+    transform: rotate(-20deg);
+  }
+  .menu_close {
+    transform: rotate(0);
+  }
+  
+  .menu_items {
+    li {
+      transform: translateX(0);
+      transition: transform .35s .45s $bounce;
+    
+      &:nth-child(2){
+        transition-delay: .47s;
+      }
+      &:nth-child(3){
+        transition-delay: .48s;
+      }
+    }
+  }
+}
+
+body {
+  color: $brown;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;
+}
+main .container1{
+    width: 70%;
+    margin: 0 auto;
+    background-color: $primary-color;
+    padding: 0px;
+}
+
+main .container1 nav{
+    display: flex;
+    justify-content: space-between;
+    height: 55px;
+    align-items: center;
+    border-bottom: #fff 1px solid;
+
+    h1{
+        padding: 12px;
+        background-color: $light-color;
+    }
+
+    .sideway-bar{
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+
+        li{
+            padding: 0 10px;
+            
+        }
+        .new-btn{
+            background: #999;
+            color: $primary-color;
+            border-radius: 20px;
+            padding: 10px 15px 2px 15px;
+            margin: 17px 25px 0 25px ;
+            cursor: pointer;
+        }
+        .new-btn:hover{
+            background: #777;
+            transition: all 0.3s ease-in-out;
+        }
+        .profile{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            h3{
+                font-size: 14px;
+                font-weight: 300;
+                margin-top: 25px;
+            }
+            h3:hover{
+                transform: scale(1.05);
+                transition: all 0.2s ease-in-out;
+            }
+        
+        }
+        .avatar{
+            background-color: $secondary-color;
+            padding: 5px;
+            margin: 17px 0 0 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        
+        }
+    }
+    
+}
+
+.container-box1{
+    margin-top: 45px;
+    .list-category{
+        display: flex;
+        justify-content: center;
+
+        ul{
+            list-style-type: none;
+            display: flex;
+            padding: 0px;
+        }
+        li{
+            padding: 5px 18px;
+            border-radius: 15px;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 35px;
+
+        .carol{
+            background-color: $light-color;
+            color: $text-color;
+            text-align: center;
+            border: #777 1px solid;
+            border-radius: 7px;
+
+            img{
+                width: 200px;
+            }
+            div{
+                margin: 15px;
+                margin-bottom: 20px;
+
+                p{
+                    margin-top: 5px;
+                    font-size: 12px;
+                }
+            }
+        }
+        .arw-left{
+            margin-left: 30px;
+            img{
+                width: 18px;
+            }
+        }
+        .arw-right{
+            margin-right: 30px;
+            img{
+                width: 18px;
+            }
+        }
+    }
+    .vw-more{
+        text-align: center;
+        margin: 50px 0;
+        .btn{
+            font-size: 14px;
+            padding: 10px 30px;
+            background-color: $secondary-color;
+            border-radius: 20px;
+            color: $primary-color;
+            border-style: none;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: $secondary-color;
+        }
+    }
+}
+#body-height{
+    height: 500px;
+}
+@import "utilities";
+@import "tabletview";
+@import "mobileview";
