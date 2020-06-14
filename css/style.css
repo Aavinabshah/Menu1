@@ -10,10 +10,8 @@
 .content {
   -webkit-transform-origin: top left;
           transform-origin: top left;
-  -webkit-transition: -webkit-transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
-  transition: -webkit-transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
-  transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
-  transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1), -webkit-transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  -webkit-transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
   background-color: #f4f4f4;
 }
 
@@ -191,6 +189,8 @@ main .container1 {
   margin: 0 auto;
   background-color: #f4f4f4;
   padding: 0px;
+  -webkit-transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  transition: all 0.7s cubic-bezier(1, 0.005, 0.24, 1);
 }
 
 main .container1 nav {
@@ -208,6 +208,7 @@ main .container1 nav {
 }
 
 main .container1 nav h1 {
+  margin-left: 30px;
   padding: 12px;
   background-color: #f4f4f4;
 }
@@ -456,7 +457,13 @@ main .container1 nav .sideway-bar .avatar {
     border-bottom-right-radius: 20%;
   }
   .shazam .content {
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
+    -webkit-transform: matrix(0.6, -0.3, 0.3, 0.6, 70, 70);
+            transform: matrix(0.6, -0.3, 0.3, 0.6, 70, 70);
+    border-radius: 50px;
+  }
+  .shazam main .container1 {
+    border-radius: 50px;
+    height: 850px;
+    overflow: hidden;
   }
 }

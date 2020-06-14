@@ -1,9 +1,11 @@
 @media ( max-width: 768px){
+    
     main .container1{
         width: 100%;
     }
     .container-box1{
         margin-top: 15px;
+
         .list-category{
             ul{
                 display: block;
@@ -138,7 +140,15 @@
       
     .shazam {
         .content {
-            transform: rotate(-30deg);
+           // transform: rotate(-30deg);
+            transform: matrix(0.6, -0.3, 0.3, 0.6, 70, 70);
+            border-radius: 50px;
         }
+        main .container1{
+            border-radius: 50px;
+            height: 850px;
+            overflow: hidden;
+        }
+        //
     }
 }
