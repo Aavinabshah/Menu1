@@ -139,6 +139,7 @@
       }
       
     .shazam {
+        overflow: hidden;
         .content {
            // transform: rotate(-30deg);
             transform: matrix(0.6, -0.3, 0.3, 0.6, 70, 70);

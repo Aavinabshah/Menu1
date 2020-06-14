@@ -456,6 +456,9 @@ main .container1 nav .sideway-bar .avatar {
     left: 0px;
     border-bottom-right-radius: 20%;
   }
+  .shazam {
+    overflow: hidden;
+  }
   .shazam .content {
     -webkit-transform: matrix(0.6, -0.3, 0.3, 0.6, 70, 70);
             transform: matrix(0.6, -0.3, 0.3, 0.6, 70, 70);
